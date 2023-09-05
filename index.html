@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>文字数単語数カウント</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="responsive.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" language="javascript">
+      function selectboxChange() {
+        target1 = document.getElementById("bocaburary");
+        target2 = document.getElementById("bocaburaryspace");
+        selindex = document.form1.Select1.selectedIndex;
+        switch (selindex) {
+          case 0:
+            target1.innerHTML = "文字数(スペース無)";
+            target2.innerHTML = "文字数(スペース有)";
+            break;
+          case 1:
+            target1.innerHTML = "単語数";
+            target2.innerHTML = "文字数(スペース除く)";
+            break;
+        }
+      }
+    </script>
+  </head>
+  <body>
+   <header>
+    <div class="container">
+      <h1>文字数単語数カウント</h1>
+
+      <div class="clear"></div>
+    </div>
+   </header>
+   <div class="main">
+     <div class="container">
+      <div class="main-count">
+       <p>日本語の文字数、英語の単語数をカウントします。大学のレポート等に使ってください。</p>
+       <p>ここに本文を貼り付けてください。</p>
+       <form name="form1" action="">
+         <div>言語</div>
+         <select id="Select1" onchange="selectboxChange();">
+           <option value="japanese">日本語</option>
+           <option value="english">英語</option>
+         </select>
+       </form>
+       <textarea id="contents"></textarea>
+      </div>
+       <div class="btns">
+         <a class="btn reset">
+           <span class="fa fa-reply"></span>リセット
+         </a>
+         <a class="btn count">
+           <span class="fa fa-calculator"></span>カウント
+         </a>
+       </div>
+       <div class="result">
+        <div class="count-menu">
+          <p id="bocaburary">文字数(スペース無)</p>
+          <p id="bocaburaryspace">文字数(スペース有)</p>
+          <p id="deno">原稿用紙何枚分<span>(400文字×？)</span></p>
+          <p id="no">Ａ4何枚分<span>(1440文字×？)</span></p>
+        </div>
+        <div class="count-result">
+          <textarea id="none"></textarea><br>
+          <textarea id="space"></textarea><br>
+          <textarea id="note"></textarea><br>
+          <textarea id="deditalnote"></textarea>
+        </div>
+
+       </div>
+    </div>
+   </div>
+   <footer>
+     <a href="https://px.a8.net/svt/ejp?a8mat=3N3PXJ+4V1GMQ+4QB4+62MDD" rel="nofollow" class="afi1">
+<img border="0" width="320" height="50" alt="" src="https://www24.a8.net/svt/bgt?aid=220203271294&wid=001&eno=01&mid=s00000022072001020000&mc=1"></a>
+<img border="0" width="1" height="1" src="https://www13.a8.net/0.gif?a8mat=3N3PXJ+4V1GMQ+4QB4+62MDD" alt="">
+<a href="https://px.a8.net/svt/ejp?a8mat=3N3PXN+3HMHF6+3AQG+O0ETT" rel="nofollow" class="afi2">
+<img border="0" width="728" height="90" alt="" src="https://www29.a8.net/svt/bgt?aid=220203275211&wid=001&eno=01&mid=s00000015388004033000&mc=1"></a>
+<img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=3N3PXN+3HMHF6+3AQG+O0ETT" alt="">
+  </footer>
+   <script src="sample.js"></script>
+  </body>
+</html>
